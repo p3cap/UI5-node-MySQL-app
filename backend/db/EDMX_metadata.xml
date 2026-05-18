@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<edmx:Edmx Version="1.0"
+	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices m:DataServiceVersion="2.0"
+		xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+		<Schema Namespace="App"
+			xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+			<EntityType Name="User">
+				<Key>
+					<PropertyRef Name="id"/>
+				</Key>
+				<Property Name="id" Type="Edm.Int32" Nullable="false"/>
+				<Property Name="user_name" Type="Edm.String" MaxLength="255"/>
+				<Property Name="phone_number" Type="Edm.String" MaxLength="20"/>
+			</EntityType>
+
+			<EntityContainer Name="AppEntities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Users" EntityType="App.User"/>
+			</EntityContainer>
+
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

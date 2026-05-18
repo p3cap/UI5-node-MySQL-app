@@ -1,0 +1,34 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	controllerName="demo.app.controller.Main">
+
+	<VBox class="sapUiSmallMargin">
+
+		<Title text="Új adat bevitele" class="sapUiSmallMarginBottom" />
+		<Input id="nameInput" placeholder="Név" class="sapUiSmallMarginBottom" />
+		<HBox class="sapUiSmallMarginBottom" alignItems="Center">
+			<Select id="countryCode" width="110px" selectedKey="+36"
+					items="{countries>/}">
+				<core:ListItem key="{countries>key}" text="{countries>text}" />
+			</Select>
+			<Input id="phoneInput" placeholder="Telefonszám" class="sapUiSmallMarginBegin" width="180px" />
+		</HBox>
+		<Button text="Mentés" type="Emphasized" press=".onCreateUser" class="sapUiSmallMarginBottom" />
+
+		<Title text="Kerrsés" class="sapUiSmallMarginTop sapUiSmallMarginBottom" />
+		<HBox class="sapUiSmallMarginBottom">
+			<Input id="searchName" placeholder="Keresés név alapján" width="250px" />
+			<Button text="Keresés" press=".onSearchByName" class="sapUiSmallMarginBegin" />
+		</HBox>
+		<HBox class="sapUiSmallMarginBottom">
+			<Input id="searchPhone" placeholder="Keresés telefonszám alapján" width="250px" />
+			<Button text="Keresés" press=".onSearchByPhone" class="sapUiSmallMarginBegin" />
+		</HBox>
+		<Button text="Összes megjelenítése" press=".onShowAll" class="sapUiSmallMarginBottom" />
+
+		<VBox id="resultContainer" class="sapUiSmallMarginTop" />
+
+	</VBox>
+
+</mvc:View>
